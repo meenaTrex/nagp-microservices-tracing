@@ -20,6 +20,9 @@ namespace UserManagement.Services
         {
             var user = new User();
             var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+            var db = Environment.GetEnvironmentVariable("Db");
+            cmd.CommandText = @"use usersdatabase";
+            cmd.ExecuteNonQuery();
             cmd.CommandText = @"Select * from Users Where Id = @Id";
             cmd.Parameters.AddWithValue("Id", Id);
             cmd.ExecuteNonQuery();

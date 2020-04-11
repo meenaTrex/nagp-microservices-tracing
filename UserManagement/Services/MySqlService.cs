@@ -16,7 +16,7 @@ namespace UserManagement.Services
         {
             Connection = new MySqlConnection(connectionString);
             this.Connection.Open();
-            this.SeedData();
+            //this.SeedData();
         }
 
         public void SeedData()
